@@ -1,5 +1,6 @@
 package com.example.materialstyling
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -22,6 +23,10 @@ class MainActivity : AppCompatActivity() {
         val languages = resources.getStringArray(R.array.languages)
         val arrayAdapter = ArrayAdapter(applicationContext,R.layout.dropdown_item,languages)
         binding.autoCompleteTextView.setAdapter(arrayAdapter)
+
+        binding.nextActivityButton.setOnClickListener{
+            startActivity(Intent(applicationContext,MainActivity2::class.java))
+        }
     }
 
 
